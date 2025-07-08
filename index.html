@@ -27,22 +27,33 @@
 <body class="bg-gray-50 font-sans">
     <!-- Sidebar Navigation -->
     <aside id="sidebar" class="fixed left-0 top-0 w-64 h-full bg-corporate-dark text-white z-50 transform transition-transform duration-300 md:translate-x-0">
-        <div class="p-6">
-            <h1 class="text-xl font-bold mb-8">Guía IA | Grupo O2</h1>
-            <nav>
-                <ul class="space-y-2">
-                    <li><a href="#inicio" class="nav-link block p-3 rounded hover:bg-corporate-blue transition-colors"><i class="fas fa-home mr-3"></i>Inicio</a></li>
-                    <li><a href="#que-es-ia" class="nav-link block p-3 rounded hover:bg-corporate-blue transition-colors"><i class="fas fa-brain mr-3"></i>¿Qué es la IA?</a></li>
-                    <li><a href="#alcance-ia" class="nav-link block p-3 rounded hover:bg-corporate-blue transition-colors"><i class="fas fa-expand mr-3"></i>El Alcance de la IA</a></li>
-                    <li><a href="#ia-accion" class="nav-link block p-3 rounded hover:bg-corporate-blue transition-colors"><i class="fas fa-bolt mr-3"></i>IA en Acción</a></li>
-                    <li><a href="#laboratorio-ia" class="nav-link block p-3 rounded hover:bg-corporate-blue transition-colors"><i class="fas fa-flask mr-3"></i>Laboratorio IA</a></li>
-                    <li><a href="#beneficios" class="nav-link block p-3 rounded hover:bg-corporate-blue transition-colors"><i class="fas fa-chart-line mr-3"></i>Beneficios</a></li>
-                    <li><a href="#politica" class="nav-link block p-3 rounded hover:bg-corporate-blue transition-colors"><i class="fas fa-shield-alt mr-3"></i>Política de Uso</a></li>
-                    <li><a href="#recursos" class="nav-link block p-3 rounded hover:bg-corporate-blue transition-colors"><i class="fas fa-newspaper mr-3"></i>Recursos</a></li>
-                    <li><a href="#equipo" class="nav-link block p-3 rounded hover:bg-corporate-blue transition-colors"><i class="fas fa-users mr-3"></i>Equipo</a></li>
-                    <li><a href="#proximos-pasos" class="nav-link block p-3 rounded hover:bg-corporate-blue transition-colors"><i class="fas fa-road mr-3"></i>Próximos Pasos</a></li>
-                </ul>
-            </nav>
+        <!-- CAMBIO: Se añadieron las clases 'h-full flex flex-col' para activar Flexbox y ocupar toda la altura -->
+        <div class="p-6 h-full flex flex-col">
+            <div>
+                <h1 class="text-xl font-bold mb-8">Guía IA | Grupo O2</h1>
+                <nav>
+                    <ul class="space-y-2">
+                        <li><a href="#inicio" class="nav-link block p-3 rounded hover:bg-corporate-blue transition-colors"><i class="fas fa-home mr-3"></i>Inicio</a></li>
+                        <li><a href="#que-es-ia" class="nav-link block p-3 rounded hover:bg-corporate-blue transition-colors"><i class="fas fa-brain mr-3"></i>¿Qué es la IA?</a></li>
+                        <li><a href="#alcance-ia" class="nav-link block p-3 rounded hover:bg-corporate-blue transition-colors"><i class="fas fa-expand mr-3"></i>El Alcance de la IA</a></li>
+                        <li><a href="#ia-accion" class="nav-link block p-3 rounded hover:bg-corporate-blue transition-colors"><i class="fas fa-bolt mr-3"></i>IA en Acción</a></li>
+                        <li><a href="#laboratorio-ia" class="nav-link block p-3 rounded hover:bg-corporate-blue transition-colors"><i class="fas fa-flask mr-3"></i>Laboratorio IA</a></li>
+                        <li><a href="#beneficios" class="nav-link block p-3 rounded hover:bg-corporate-blue transition-colors"><i class="fas fa-chart-line mr-3"></i>Beneficios</a></li>
+                        <li><a href="#politica" class="nav-link block p-3 rounded hover:bg-corporate-blue transition-colors"><i class="fas fa-shield-alt mr-3"></i>Política de Uso</a></li>
+                        <li><a href="#recursos" class="nav-link block p-3 rounded hover:bg-corporate-blue transition-colors"><i class="fas fa-newspaper mr-3"></i>Recursos</a></li>
+                        <li><a href="#equipo" class="nav-link block p-3 rounded hover:bg-corporate-blue transition-colors"><i class="fas fa-users mr-3"></i>Equipo</a></li>
+                        <li><a href="#proximos-pasos" class="nav-link block p-3 rounded hover:bg-corporate-blue transition-colors"><i class="fas fa-road mr-3"></i>Próximos Pasos</a></li>
+                    </ul>
+                </nav>
+            </div>
+    
+            <!-- CAMBIO: Pie de página nuevo añadido aquí -->
+            <!-- La clase 'mt-auto' empuja este bloque hacia el fondo -->
+            <div class="mt-auto pt-6 text-center">
+                <p class="text-xs opacity-75">© 2025 Grupo O2</p>
+                <p class="text-xs opacity-75 mt-1">Guía de Capacitación Interna</p>
+                <p class="text-xs opacity-50 mt-2">Una iniciativa del equipo ADO</p>
+            </div>
         </div>
     </aside>
 
