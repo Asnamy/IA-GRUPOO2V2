@@ -100,18 +100,15 @@
                     </div>
                 </div>
 
-                <!-- Reflection Point -->
+                <!-- Punto de Reflexión 1: Punto de Vista del Experto -->
                 <div class="reflection-point bg-accent-orange/20 border-l-4 border-accent-orange rounded-lg p-6">
                     <h4 class="text-xl font-semibold mb-3"><i class="fas fa-lightbulb mr-2"></i>Punto de Reflexión</h4>
                     <p class="mb-4">¿Qué expectativas tienes sobre el uso de IA en tu trabajo diario?</p>
-                    <button class="bg-accent-orange text-white px-6 py-2 rounded hover:bg-orange-600 transition-colors" onclick="toggleReflection('reflection-1')">
-                        Participar
+                    <button class="interactive-button bg-accent-orange text-white px-6 py-2 rounded hover:bg-orange-600 transition-colors" data-interaction-type="expert-view" data-target="expert-answer-1">
+                        Ver expectativas comunes
                     </button>
-                    <div id="reflection-1" class="hidden mt-4">
-                        <textarea class="w-full p-3 rounded bg-white/10 text-white placeholder-gray-300" rows="3" placeholder="Comparte tus pensamientos aquí..."></textarea>
-                        <button class="mt-2 bg-accent-green text-white px-4 py-2 rounded hover:bg-green-600 transition-colors">
-                            Guardar Reflexión
-                        </button>
+                    <div id="expert-answer-1" class="hidden mt-4 bg-white/50 p-4 rounded-md">
+                        <p class="font-semibold text-gray-800">Una expectativa común y realista es usar la IA como un 'asistente inteligente' para acelerar tareas repetitivas (como redactar correos o resumir textos), liberando así más tiempo para la creatividad y la estrategia que requieren un toque humano.</p>
                     </div>
                 </div>
             </div>
@@ -203,19 +200,16 @@
                     </div>
                 </div>
 
-                <!-- Reflection Point -->
+                <!-- Punto de Reflexión 2: Mini-Quiz -->
                 <div class="reflection-point bg-blue-50 border-l-4 border-corporate-blue rounded-lg p-6">
-                    <h4 class="text-xl font-semibold mb-3 text-corporate-dark"><i class="fas fa-lightbulb mr-2"></i>Punto de Reflexión</h4>
-                    <p class="mb-4 text-gray-700">¿Has utilizado alguno de estos modelos de IA antes? ¿Cuál fue tu experiencia?</p>
-                    <button class="bg-corporate-blue text-white px-6 py-2 rounded hover:bg-corporate-dark transition-colors" onclick="toggleReflection('reflection-2')">
-                        Compartir Experiencia
-                    </button>
-                    <div id="reflection-2" class="hidden mt-4">
-                        <textarea class="w-full p-3 rounded border border-gray-300" rows="3" placeholder="Describe tu experiencia con IA..."></textarea>
-                        <button class="mt-2 bg-accent-green text-white px-4 py-2 rounded hover:bg-green-600 transition-colors">
-                            Guardar Experiencia
-                        </button>
+                    <h4 class="text-xl font-semibold mb-3 text-corporate-dark"><i class="fas fa-question-circle mr-2"></i>Pon a Prueba tu Conocimiento</h4>
+                    <p class="mb-4 text-gray-700 font-semibold">Según la definición de la guía, ¿qué necesita la IA para generar resultados de alta calidad?</p>
+                    <div class="space-y-3" data-interaction-type="quiz">
+                        <button class="quiz-option-btn block w-full text-left p-3 rounded-lg border-2 border-gray-300 hover:bg-gray-100 transition-colors">Un ordenador muy potente.</button>
+                        <button class="quiz-option-btn block w-full text-left p-3 rounded-lg border-2 border-gray-300 hover:bg-gray-100 transition-colors">Conexión a internet de alta velocidad.</button>
+                        <button class="quiz-option-btn block w-full text-left p-3 rounded-lg border-2 border-gray-300 hover:bg-gray-100 transition-colors" data-correct="true">Prompts (entradas) de alta calidad.</button>
                     </div>
+                    <div class="quiz-feedback hidden mt-4 p-3 rounded-md text-base font-semibold"></div>
                 </div>
             </div>
         </section>
@@ -467,18 +461,15 @@
                     </div>
                 </div>
 
-                <!-- Reflection Point -->
+                <!-- Punto de Reflexión 3: Punto de Vista del Experto -->
                 <div class="reflection-point bg-blue-50 border-l-4 border-corporate-blue rounded-lg p-6">
                     <h4 class="text-xl font-semibold mb-3 text-corporate-dark"><i class="fas fa-lightbulb mr-2"></i>Punto de Reflexión</h4>
                     <p class="mb-4 text-gray-700">¿Cuáles de estos ejemplos encuentras más útiles para tu trabajo diario?</p>
-                    <button class="bg-corporate-blue text-white px-6 py-2 rounded hover:bg-corporate-dark transition-colors" onclick="toggleReflection('reflection-3')">
-                        Compartir Opinión
+                    <button class="interactive-button bg-corporate-blue text-white px-6 py-2 rounded hover:bg-corporate-dark transition-colors" data-interaction-type="expert-view" data-target="expert-answer-3">
+                        Descubrir el dato clave
                     </button>
-                    <div id="reflection-3" class="hidden mt-4">
-                        <textarea class="w-full p-3 rounded border border-gray-300" rows="3" placeholder="Comparte qué ejemplos te resultan más útiles..."></textarea>
-                        <button class="mt-2 bg-accent-green text-white px-4 py-2 rounded hover:bg-green-600 transition-colors">
-                            Guardar Opinión
-                        </button>
+                    <div id="expert-answer-3" class="hidden mt-4 bg-white p-4 rounded-md shadow">
+                        <p class="font-semibold text-gray-800">Un estudio de McKinsey revela que las funciones que más se benefician de la IA son Marketing y Ventas, y Desarrollo de Productos. Tareas como la redacción de correos y el análisis de datos son las que muestran el retorno de inversión en tiempo más rápido.</p>
                     </div>
                 </div>
             </div>
@@ -617,18 +608,15 @@
                     </div>
                 </div>
 
-                <!-- Reflection Point -->
+                <!-- Punto de Reflexión 4: Punto de Vista del Experto -->
                 <div class="reflection-point bg-orange-50 border-l-4 border-accent-orange rounded-lg p-6">
                     <h4 class="text-xl font-semibold mb-3 text-corporate-dark"><i class="fas fa-lightbulb mr-2"></i>Punto de Reflexión</h4>
                     <p class="mb-4 text-gray-700">¿Cómo crees que la IA podría mejorar tu satisfacción y realización laboral?</p>
-                    <button class="bg-accent-orange text-white px-6 py-2 rounded hover:bg-orange-600 transition-colors" onclick="toggleReflection('reflection-4')">
-                        Reflexionar
+                    <button class="interactive-button bg-accent-orange text-white px-6 py-2 rounded hover:bg-orange-600 transition-colors" data-interaction-type="expert-view" data-target="expert-answer-4">
+                        Revelar perspectiva clave
                     </button>
-                    <div id="reflection-4" class="hidden mt-4">
-                        <textarea class="w-full p-3 rounded border border-gray-300" rows="3" placeholder="Comparte cómo la IA podría mejorar tu satisfacción laboral..."></textarea>
-                        <button class="mt-2 bg-accent-green text-white px-4 py-2 rounded hover:bg-green-600 transition-colors">
-                            Guardar Reflexión
-                        </button>
+                    <div id="expert-answer-4" class="hidden mt-4 bg-white p-4 rounded-md shadow">
+                        <p class="font-semibold text-gray-800">El principal impulsor de la satisfacción laboral reportado por usuarios de IA es la reducción de la 'carga cognitiva'. Al delegar tareas tediosas, los empleados sienten menos agotamiento mental, lo que les permite disfrutar más de las partes creativas y estratégicas de su rol.</p>
                     </div>
                 </div>
             </div>
@@ -728,24 +716,22 @@
                     </div>
                 </div>
 
-                <!-- Group Question -->
+                <!-- Mini-Quiz de Políticas de Uso -->
                 <div class="bg-blue-50 border-l-4 border-corporate-blue rounded-lg p-6">
-                    <h4 class="text-xl font-semibold mb-3 text-corporate-dark"><i class="fas fa-users mr-2"></i>Pregunta Grupal</h4>
-                    <p class="mb-4 text-gray-700">¿Cuál consideras la política más importante para el uso seguro de IA en Grupo O2?</p>
-                    <div class="grid md:grid-cols-2 gap-4">
-                        <button class="group-option bg-white border border-gray-300 rounded p-3 hover:bg-corporate-blue hover:text-white transition-colors">
-                            Privacidad de Datos
+                    <h4 class="text-xl font-semibold mb-3 text-corporate-dark"><i class="fas fa-question-circle mr-2"></i>Pon a Prueba tu Conocimiento</h4>
+                    <p class="mb-4 text-gray-700 font-semibold">¿Cuál es la regla número uno al usar IA con información de la empresa, según la guía?</p>
+                    <div class="space-y-3" data-interaction-type="quiz">
+                        <button class="quiz-option-btn block w-full text-left p-3 rounded-lg border-2 border-gray-300 hover:bg-gray-100 transition-colors">
+                            Siempre usar la IA más potente disponible.
                         </button>
-                        <button class="group-option bg-white border border-gray-300 rounded p-3 hover:bg-corporate-blue hover:text-white transition-colors">
-                            Supervisión Humana
+                        <button class="quiz-option-btn block w-full text-left p-3 rounded-lg border-2 border-gray-300 hover:bg-gray-100 transition-colors" data-correct="true">
+                            NUNCA compartir datos sensibles o confidenciales.
                         </button>
-                        <button class="group-option bg-white border border-gray-300 rounded p-3 hover:bg-corporate-blue hover:text-white transition-colors">
-                            Transparencia
-                        </button>
-                        <button class="group-option bg-white border border-gray-300 rounded p-3 hover:bg-corporate-blue hover:text-white transition-colors">
-                            Evitar Sesgos
+                        <button class="quiz-option-btn block w-full text-left p-3 rounded-lg border-2 border-gray-300 hover:bg-gray-100 transition-colors">
+                            Confiar ciegamente en los resultados de la IA.
                         </button>
                     </div>
+                    <div class="quiz-feedback hidden mt-4 p-3 rounded-md text-base font-semibold"></div>
                 </div>
             </div>
         </section>
