@@ -35,6 +35,7 @@
                     <li><a href="#que-es-ia" class="nav-link block p-3 rounded hover:bg-corporate-blue transition-colors"><i class="fas fa-brain mr-3"></i>¿Qué es la IA?</a></li>
                     <li><a href="#alcance-ia" class="nav-link block p-3 rounded hover:bg-corporate-blue transition-colors"><i class="fas fa-expand mr-3"></i>El Alcance de la IA</a></li>
                     <li><a href="#ia-accion" class="nav-link block p-3 rounded hover:bg-corporate-blue transition-colors"><i class="fas fa-bolt mr-3"></i>IA en Acción</a></li>
+                    <li><a href="#laboratorio-ia" class="nav-link block p-3 rounded hover:bg-corporate-blue transition-colors"><i class="fas fa-flask mr-3"></i>Laboratorio IA</a></li>
                     <li><a href="#beneficios" class="nav-link block p-3 rounded hover:bg-corporate-blue transition-colors"><i class="fas fa-chart-line mr-3"></i>Beneficios</a></li>
                     <li><a href="#politica" class="nav-link block p-3 rounded hover:bg-corporate-blue transition-colors"><i class="fas fa-shield-alt mr-3"></i>Política de Uso</a></li>
                     <li><a href="#recursos" class="nav-link block p-3 rounded hover:bg-corporate-blue transition-colors"><i class="fas fa-newspaper mr-3"></i>Recursos</a></li>
@@ -483,7 +484,79 @@
             </div>
         </section>
 
-        <!-- Section 5: BENEFICIOS Y OPORTUNIDADES -->
+        <!-- Section 5: LABORATORIO DE IA (CON PESTAÑAS) -->
+        <section id="laboratorio-ia" class="section-content min-h-screen p-6 md:p-12 bg-gray-50">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-4xl font-bold text-corporate-dark mb-8 text-center">Laboratorio de IA en la Práctica</h2>
+                <p class="text-xl text-gray-700 text-center mb-12">
+                    Experimenta de primera mano cómo la IA puede transformar tareas cotidianas.
+                </p>
+        
+                <div class="bg-white rounded-lg shadow-2xl p-8 border border-gray-200">
+                    <!-- Pestañas de Navegación del Laboratorio -->
+                    <div class="border-b border-gray-200 mb-6">
+                        <nav class="-mb-px flex space-x-6" aria-label="Tabs">
+                            <button class="tab-button active-tab" data-target="redaccion">
+                                <i class="fas fa-magic mr-2"></i>Asistente de Redacción
+                            </button>
+                            <button class="tab-button" data-target="formulas">
+                                <i class="fas fa-table mr-2"></i>Generador de Fórmulas Excel
+                            </button>
+                        </nav>
+                    </div>
+        
+                    <!-- Contenido de la Pestaña 1: Asistente de Redacción -->
+                    <div id="redaccion" class="tab-content">
+                        <h3 class="text-2xl font-semibold text-corporate-dark mb-6 text-center">Asistente de Redacción Inteligente</h3>
+                        <div class="mb-6">
+                            <label for="scenarioSelector" class="block font-semibold mb-2 text-gray-700">1. Elige un escenario de ejemplo:</label>
+                            <select id="scenarioSelector" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-corporate-blue focus:border-transparent transition"></select>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div>
+                                <label for="inputText" class="block font-semibold mb-2 text-gray-700">2. Texto Original:</label>
+                                <textarea id="inputText" rows="12" class="w-full p-4 border border-gray-300 rounded-lg"></textarea>
+                            </div>
+                            <div>
+                                <label class="block font-semibold mb-2 text-gray-700">4. Resultado de la IA:</label>
+                                <div id="outputPanel" class="w-full h-full p-4 border border-gray-200 rounded-lg bg-gray-50 flex items-center justify-center"></div>
+                            </div>
+                        </div>
+                        <div class="mt-8 text-center">
+                            <p class="font-semibold mb-4 text-gray-700">3. Elige una acción:</p>
+                            <button id="summarizeBtn" class="bg-corporate-blue text-white px-6 py-3 rounded-lg hover:bg-corporate-dark transition-transform hover:scale-105 mr-3 shadow-lg">Resumir Texto</button>
+                            <button id="improveBtn" class="bg-accent-green text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-transform hover:scale-105 shadow-lg">Mejorar a Tono Profesional</button>
+                        </div>
+                    </div>
+        
+                    <!-- Contenido de la Pestaña 2: Generador de Fórmulas -->
+                    <div id="formulas" class="tab-content hidden">
+                        <h3 class="text-2xl font-semibold text-corporate-dark mb-6 text-center">Generador de Fórmulas Excel</h3>
+                        <div class="mb-6">
+                            <label for="formulaScenarioSelector" class="block font-semibold mb-2 text-gray-700">1. Elige un problema a resolver:</label>
+                            <select id="formulaScenarioSelector" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-corporate-blue focus:border-transparent transition"></select>
+                        </div>
+                        <div class="text-center">
+                            <div class="mb-4">
+                                <p class="font-semibold text-gray-700 mb-2">2. Problema en lenguaje natural:</p>
+                                <div id="formulaProblem" class="p-4 bg-gray-100 rounded-lg text-lg italic text-gray-800"></div>
+                            </div>
+                            <div class="my-6">
+                                <button id="generateFormulaBtn" class="bg-corporate-blue text-white px-8 py-3 rounded-lg hover:bg-corporate-dark transition-transform hover:scale-105 shadow-lg">3. Generar Fórmula con IA</button>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-gray-700 mb-2">4. Fórmula generada por la IA:</p>
+                                <div id="formulaOutput" class="p-4 bg-gray-800 text-white font-mono text-left rounded-lg flex items-center justify-between">
+                                    <span class="text-gray-400">Aquí aparecerá la fórmula...</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: BENEFICIOS Y OPORTUNIDADES -->
         <section id="beneficios" class="section-content min-h-screen p-6 md:p-12 bg-gray-50">
             <div class="max-w-6xl mx-auto">
                 <h2 class="text-4xl font-bold text-corporate-dark mb-8 text-center">Beneficios y Oportunidades</h2>
@@ -561,7 +634,7 @@
             </div>
         </section>
 
-        <!-- Section 6: POLÍTICA USO IA -->
+        <!-- Section 7: POLÍTICA USO IA -->
         <section id="politica" class="section-content min-h-screen p-6 md:p-12 bg-white">
             <div class="max-w-6xl mx-auto">
                 <h2 class="text-4xl font-bold text-corporate-dark mb-8 text-center">Política de Uso de IA</h2>
@@ -677,7 +750,7 @@
             </div>
         </section>
 
-        <!-- Section 7: RECURSOS INTERESANTES -->
+        <!-- Section 8: RECURSOS INTERESANTES -->
         <section id="recursos" class="section-content min-h-screen p-6 md:p-12 bg-gray-50">
             <div class="max-w-6xl mx-auto">
                 <h2 class="text-4xl font-bold text-corporate-dark mb-8 text-center">Recursos Interesantes</h2>
@@ -762,7 +835,7 @@
             </div>
         </section>
 
-        <!-- Section 8: EQUIPO -->
+        <!-- Section 9: EQUIPO -->
         <section id="equipo" class="section-content min-h-screen p-6 md:p-12 bg-white">
             <div class="max-w-6xl mx-auto">
                 <h2 class="text-4xl font-bold text-corporate-dark mb-8 text-center">Equipo de Desarrollo ADO</h2>
@@ -771,78 +844,8 @@
                     <p class="text-xl text-gray-700">Conoce al equipo que hace posible la innovación en Grupo O2</p>
                 </div>
 
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-                    <div class="team-member bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg p-6 text-center hover:shadow-lg transition-all">
-                        <div class="mb-4">
-                            <img src="images/Daniel.jpg" alt="Daniel Rodriguez" class="w-24 h-24 rounded-full mx-auto object-cover border-4 border-corporate-blue">
-                        </div>
-                        <h3 class="text-xl font-semibold text-corporate-dark mb-2">Daniel Rodriguez</h3>
-                        <p class="text-gray-600 mb-3">Líder del Departamento de ADO</p>
-                        <div class="flex justify-center space-x-2">
-                            <i class="fab fa-linkedin text-corporate-blue"></i>
-                            <i class="fas fa-envelope text-gray-400"></i>
-                        </div>
-                    </div>
-
-                    <div class="team-member bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg p-6 text-center hover:shadow-lg transition-all">
-                        <div class="mb-4">
-                            <img src="images/Luis.jpg" alt="Luis Alberto Olcay" class="w-24 h-24 rounded-full mx-auto object-cover border-4 border-corporate-blue">
-                        </div>
-                        <h3 class="text-xl font-semibold text-corporate-dark mb-2">Luis Alberto Olcay</h3>
-                        <p class="text-gray-600 mb-3">Líder de Tecnología</p>
-                        <div class="flex justify-center space-x-2">
-                            <i class="fab fa-linkedin text-corporate-blue"></i>
-                            <i class="fas fa-envelope text-gray-400"></i>
-                        </div>
-                    </div>
-
-                    <div class="team-member bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg p-6 text-center hover:shadow-lg transition-all">
-                        <div class="mb-4">
-                            <img src="images/Carlos.jpg" alt="Carlos Gutierrez" class="w-24 h-24 rounded-full mx-auto object-cover border-4 border-corporate-blue">
-                        </div>
-                        <h3 class="text-xl font-semibold text-corporate-dark mb-2">Carlos Gutierrez</h3>
-                        <p class="text-gray-600 mb-3">Desarrollador</p>
-                        <div class="flex justify-center space-x-2">
-                            <i class="fab fa-linkedin text-corporate-blue"></i>
-                            <i class="fas fa-envelope text-gray-400"></i>
-                        </div>
-                    </div>
-
-                    <div class="team-member bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg p-6 text-center hover:shadow-lg transition-all">
-                        <div class="mb-4">
-                            <img src="images/Claudio.jpg" alt="Claudio Pacheco" class="w-24 h-24 rounded-full mx-auto object-cover border-4 border-corporate-blue">
-                        </div>
-                        <h3 class="text-xl font-semibold text-corporate-dark mb-2">Claudio Pacheco</h3>
-                        <p class="text-gray-600 mb-3">Desarrollador</p>
-                        <div class="flex justify-center space-x-2">
-                            <i class="fab fa-linkedin text-corporate-blue"></i>
-                            <i class="fas fa-envelope text-gray-400"></i>
-                        </div>
-                    </div>
-
-                    <div class="team-member bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg p-6 text-center hover:shadow-lg transition-all">
-                        <div class="mb-4">
-                            <img src="images/Adan.jpg" alt="Adan Cumana" class="w-24 h-24 rounded-full mx-auto object-cover border-4 border-corporate-blue">
-                        </div>
-                        <h3 class="text-xl font-semibold text-corporate-dark mb-2">Adan Cumana</h3>
-                        <p class="text-gray-600 mb-3">Analista de Datos</p>
-                        <div class="flex justify-center space-x-2">
-                            <i class="fab fa-linkedin text-corporate-blue"></i>
-                            <i class="fas fa-envelope text-gray-400"></i>
-                        </div>
-                    </div>
-
-                    <div class="team-member bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg p-6 text-center hover:shadow-lg transition-all">
-                        <div class="mb-4">
-                            <img src="images/Pablo.jpg" alt="Pablo Palma" class="w-24 h-24 rounded-full mx-auto object-cover border-4 border-corporate-blue">
-                        </div>
-                        <h3 class="text-xl font-semibold text-corporate-dark mb-2">Pablo Palma</h3>
-                        <p class="text-gray-600 mb-3">Jefe Marketing Digital</p>
-                        <div class="flex justify-center space-x-2">
-                            <i class="fab fa-linkedin text-corporate-blue"></i>
-                            <i class="fas fa-envelope text-gray-400"></i>
-                        </div>
-                    </div>
+                <div id="team-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                  <!-- El equipo se cargará aquí dinámicamente desde el archivo JSON -->
                 </div>
 
                 <div class="text-center">
@@ -857,7 +860,7 @@
             </div>
         </section>
 
-        <!-- Section 9: PRÓXIMOS PASOS -->
+        <!-- Section 10: PRÓXIMOS PASOS -->
         <section id="proximos-pasos" class="section-content min-h-screen p-6 md:p-12 bg-gradient-to-br from-corporate-dark to-corporate-blue text-white">
             <div class="max-w-6xl mx-auto">
                 <h2 class="text-4xl font-bold mb-8 text-center">Próximos Pasos</h2>
@@ -874,40 +877,46 @@
                         
                         <!-- Gemini -->
                         <div class="text-center">
-                            <!-- 1. Este div ahora crea el círculo de fondo blanco -->
-                            <div class="w-16 h-16 rounded-full bg-white mx-auto mb-4 flex items-center justify-center shadow-md">
-                                <!-- 2. La imagen va dentro, es un poco más pequeña para crear un margen -->
-                                <img src="images/gemini.png" alt="Logo de Gemini" class="w-12 h-12 object-contain">
-                            </div>
-                            <h4 class="text-xl font-semibold mb-2">Gemini (Google)</h4>
-                            <p class="text-sm opacity-80">IA multimodal para análisis complejo y creatividad</p>
+                            <a href="https://gemini.google.com/" target="_blank" rel="noopener noreferrer" class="block p-4 rounded-lg hover:bg-white/10 transition-colors duration-300">
+                                <div class="w-16 h-16 rounded-full bg-white mx-auto mb-4 flex items-center justify-center shadow-md">
+                                    <img src="images/gemini.png" alt="Logo de Gemini" class="w-12 h-12 object-contain">
+                                </div>
+                                <h4 class="text-xl font-semibold mb-2">Gemini (Google)</h4>
+                                <p class="text-sm opacity-80">IA multimodal para análisis complejo y creatividad</p>
+                            </a>
                         </div>
                 
                         <!-- Perplexity AI -->
                         <div class="text-center">
-                            <div class="w-16 h-16 rounded-full bg-white mx-auto mb-4 flex items-center justify-center shadow-md">
-                                <img src="images/perplexity.png" alt="Logo de Perplexity AI" class="w-12 h-12 object-contain">
-                            </div>
-                            <h4 class="text-xl font-semibold mb-2">Perplexity AI</h4>
-                            <p class="text-sm opacity-80">Investigación e información actualizada</p>
+                            <a href="https://www.perplexity.ai/" target="_blank" rel="noopener noreferrer" class="block p-4 rounded-lg hover:bg-white/10 transition-colors duration-300">
+                                <div class="w-16 h-16 rounded-full bg-white mx-auto mb-4 flex items-center justify-center shadow-md">
+                                    <img src="images/perplexity.png" alt="Logo de Perplexity AI" class="w-12 h-12 object-contain">
+                                </div>
+                                <h4 class="text-xl font-semibold mb-2">Perplexity AI</h4>
+                                <p class="text-sm opacity-80">Investigación e información actualizada</p>
+                            </a>
                         </div>
                 
                         <!-- NotebookLM -->
                         <div class="text-center">
-                            <div class="w-16 h-16 rounded-full bg-white mx-auto mb-4 flex items-center justify-center shadow-md">
-                                <img src="images/notebooklm.png" alt="Logo de NotebookLM" class="w-12 h-12 object-contain">
-                            </div>
-                            <h4 class="text-xl font-semibold mb-2">NotebookLM</h4>
-                            <p class="text-sm opacity-80">Análisis de documentos y síntesis</p>
+                            <a href="https://notebooklm.google.com/" target="_blank" rel="noopener noreferrer" class="block p-4 rounded-lg hover:bg-white/10 transition-colors duration-300">
+                                <div class="w-16 h-16 rounded-full bg-white mx-auto mb-4 flex items-center justify-center shadow-md">
+                                    <img src="images/notebooklm.png" alt="Logo de NotebookLM" class="w-12 h-12 object-contain">
+                                </div>
+                                <h4 class="text-xl font-semibold mb-2">NotebookLM</h4>
+                                <p class="text-sm opacity-80">Análisis de documentos y síntesis</p>
+                            </a>
                         </div>
                 
                         <!-- Manus AI -->
                         <div class="text-center">
-                            <div class="w-16 h-16 rounded-full bg-white mx-auto mb-4 flex items-center justify-center shadow-md">
-                                 <img src="images/manus.png" alt="Logo de Manus AI" class="w-12 h-12 object-contain">
-                            </div>
-                            <h4 class="text-xl font-semibold mb-2">Manus AI</h4>
-                            <p class="text-sm opacity-80">Ideal para crear presentaciones y programar</p>
+                            <a href="https://www.manus.ai/" target="_blank" rel="noopener noreferrer" class="block p-4 rounded-lg hover:bg-white/10 transition-colors duration-300">
+                                <div class="w-16 h-16 rounded-full bg-white mx-auto mb-4 flex items-center justify-center shadow-md">
+                                     <img src="images/manus.png" alt="Logo de Manus AI" class="w-12 h-12 object-contain">
+                                </div>
+                                <h4 class="text-xl font-semibold mb-2">Manus AI</h4>
+                                <p class="text-sm opacity-80">Ideal para crear presentaciones y programar</p>
+                            </a>
                         </div>
                         
                     </div>
