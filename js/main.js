@@ -169,26 +169,8 @@ function setActiveSection() {
 
 // Interactive Elements Setup
 function setupInteractiveElements() {
-    // Group option buttons
-    const groupOptions = document.querySelectorAll('.group-option');
-    groupOptions.forEach(option => {
-        option.addEventListener('click', function() {
-            // Remove active class from siblings
-            const siblings = this.parentElement.querySelectorAll('.group-option');
-            siblings.forEach(sibling => {
-                sibling.classList.remove('bg-corporate-blue', 'text-white');
-                sibling.classList.add('bg-white', 'text-gray-700');
-            });
-            
-            // Add active class to clicked option
-            this.classList.remove('bg-white', 'text-gray-700');
-            this.classList.add('bg-corporate-blue', 'text-white');
-            
-            // Show success message
-            showNotification('¡Gracias por tu participación!', 'success');
-        });
-    });
-
+    // La lógica para 'group-option' ha sido eliminada ya que esos botones ya no existen.
+    
     // Add hover effects to cards
     addCardHoverEffects();
 }
