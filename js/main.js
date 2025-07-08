@@ -426,12 +426,16 @@ function setupAccessibility() {
 // Search Functionality
 function setupSearch() {
     const searchInput = document.getElementById('search-input');
+    
+    // --- CAMBIO CLAVE ---
+    // Solo si el elemento searchInput existe, procedemos a añadir el listener.
     if (searchInput) {
         searchInput.addEventListener('input', function() {
             const query = this.value.toLowerCase();
             searchContent(query);
         });
     }
+    // Si no existe, la función simplemente no hace nada y no causa un error.
 }
 
 function searchContent(query) {
@@ -536,7 +540,6 @@ document.addEventListener('DOMContentLoaded', function() {
 // Expose global functions
 window.openModal = openModal;
 window.closeModal = closeModal;
-window.toggleReflection = toggleReflection;
 window.printPage = printPage;
 window.exportToPDF = exportToPDF;
 window.shareContent = shareContent;
