@@ -14,6 +14,7 @@ function initializeApp() {
     setActiveSection();
     setupAILab();
     loadTeamMembers();
+    setupInteractivePoints();
 }
 
 // Navigation Setup
@@ -327,21 +328,6 @@ function closeModal(modalId) {
     }
 }
 
-// Reflection Functions
-function toggleReflection(reflectionId) {
-    const reflection = document.getElementById(reflectionId);
-    if (reflection) {
-        reflection.classList.toggle('hidden');
-        
-        if (!reflection.classList.contains('hidden')) {
-            // Focus on textarea
-            const textarea = reflection.querySelector('textarea');
-            if (textarea) {
-                setTimeout(() => textarea.focus(), 100);
-            }
-        }
-    }
-}
 
 // Notification System
 function showNotification(message, type = 'info') {
@@ -764,4 +750,54 @@ async function loadTeamMembers() {
         const container = document.getElementById('team-container');
         if(container) container.innerHTML = '<p class="text-center text-red-500">Error al cargar la información del equipo.</p>';
     }
+}
+
+function setupInteractivePoints() {
+    document.body.addEventListener('click', function(event) {
+        
+        // Lógica para los Puntos de Vista del Experto
+        if (event.target.matches('.interactive-button[data-interaction-type="expert-view"]')) {
+            const button = event.target;
+            const targetId = button.dataset.target;
+            const answerDiv = document.getElementById(targetId);
+            
+            if (answerDiv) {
+                const isHidden = answerDiv.classList.contains('hidden');
+                answerDiv.classList.toggle('hidden');
+                button.textContent = isHidden ? 'Ocultar respuesta' : 'Ver respuesta';
+            }
+        }
+
+        // Lógica para los Mini-Quizzes
+        if (event.target.matches('.quiz-option-btn')) {
+            const button = event.target;
+            const quizContainer = button.parentElement;
+            const feedbackDiv = quizContainer.nextElementSibling;
+            const isCorrect = button.dataset.correct === 'true';
+
+            // Deshabilitar todos los botones de este quiz
+            quizContainer.querySelectorAll('.quiz-option-btn').forEach(btn => {
+                btn.disabled = true;
+                btn.classList.add('opacity-50', 'cursor-not-allowed');
+            });
+            
+            if (isCorrect) {
+                button.classList.remove('border-gray-300');
+                button.classList.add('bg-green-100', 'border-green-500');
+                feedbackDiv.textContent = '¡Correcto! Excelente trabajo.';
+                feedbackDiv.className = 'quiz-feedback mt-4 p-3 rounded-md text-base font-semibold bg-green-100 text-green-800';
+            } else {
+                button.classList.remove('border-gray-300');
+                button.classList.add('bg-red-100', 'border-red-500');
+                feedbackDiv.textContent = 'Respuesta incorrecta. La respuesta correcta está resaltada en verde.';
+                feedbackDiv.className = 'quiz-feedback mt-4 p-3 rounded-md text-base font-semibold bg-red-100 text-red-800';
+                // Resaltar la respuesta correcta
+                const correctButton = quizContainer.querySelector('[data-correct="true"]');
+                correctButton.classList.remove('border-gray-300');
+                correctButton.classList.add('bg-green-100', 'border-green-500');
+            }
+            
+            feedbackDiv.classList.remove('hidden');
+        }
+    });
 }
