@@ -43,7 +43,6 @@
                         <li><a href="#recursos" class="nav-link block p-3 rounded hover:bg-corporate-blue transition-colors"><i class="fas fa-newspaper mr-3"></i>Recursos</a></li>
                         <li><a href="#equipo" class="nav-link block p-3 rounded hover:bg-corporate-blue transition-colors"><i class="fas fa-users mr-3"></i>Equipo</a></li>
                         <li><a href="#proximos-pasos" class="nav-link block p-3 rounded hover:bg-corporate-blue transition-colors"><i class="fas fa-road mr-3"></i>Próximos Pasos</a></li>
-                        <li><a href="#visualizacion" class="nav-link block p-3 rounded hover:bg-corporate-blue transition-colors"><i class="fas fa-project-diagram mr-3"></i>Visualización</a></li>
                     </ul>
                 </nav>
             </div>
@@ -970,21 +969,6 @@
                 </div>
             </div>
         </section>
-
-        <!-- Section 11: VISUALIZACIÓN INTERACTIVA -->
-        <section id="visualizacion" class="section-content min-h-screen p-6 md:p-12 bg-white flex items-center justify-center">
-            <div class="max-w-4xl mx-auto text-center">
-                <div class="bg-gradient-to-r from-corporate-blue to-corporate-light text-white rounded-lg p-12 shadow-2xl">
-                    <h2 class="text-4xl font-bold mb-4">Resumen Interactivo</h2>
-                    <p class="text-xl mb-8 opacity-90">
-                        Explora un mapa conceptual de toda la guía. Arrastra los nodos, haz zoom y haz clic para descubrir las conexiones entre cada tema que hemos visto.
-                    </p>
-                    <button id="open-viz-btn" class="bg-white text-corporate-blue px-10 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-transform hover:scale-105 shadow-lg">
-                        <i class="fas fa-project-diagram mr-3"></i>Abrir Visualización
-                    </button>
-                </div>
-            </div>
-        </section>
     </main>
 
     <!-- Modals for IA en Acción examples -->
@@ -1237,32 +1221,5 @@
     </div>
 
     <script src="js/main.js"></script>
-    
-    <!-- Modal para la Visualización D3.js -->
-    <div id="viz-modal-overlay" class="fixed inset-0 bg-black bg-opacity-75 z-[100] flex items-center justify-center p-4 hidden">
-        <div id="viz-modal-content" class="relative bg-[#2d3748] rounded-xl shadow-lg w-full h-full max-w-[95vw] max-h-[95vh] flex flex-col p-4">
-            <button id="close-viz-btn" class="absolute top-2 right-2 bg-white/20 text-white rounded-full w-8 h-8 text-xl hover:bg-white/40 z-20">×</button>
-            <div class="chart-container flex-grow h-full w-full">
-                <svg id="network-chart" class="w-full h-full"></svg>
-            </div>
-            <div class="legend text-xs text-gray-400 p-2 border-t border-gray-600">
-                <ul id="legend-list" class="flex flex-wrap justify-center gap-x-3 gap-y-1"></ul>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Tooltip para la Visualización -->
-    <div id="viz-tooltip" class="tooltip"></div>
-    
-    <!-- Modal de DETALLE para los Nodos de la Visualización -->
-    <div id="viz-node-detail-modal" class="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-[2000] p-4 hidden">
-        <div class="bg-[#2d3748] p-8 rounded-xl max-w-lg w-full shadow-lg relative">
-            <div class="flex justify-between items-center mb-4 pb-2 border-b border-gray-600">
-                <h2 id="viz-node-title" class="text-2xl font-bold text-gray-300"></h2>
-                <button id="viz-close-detail-btn" class="text-3xl text-gray-400 hover:text-white">×</button>
-            </div>
-            <div id="viz-node-body" class="text-base leading-relaxed text-gray-200"></div>
-        </div>
-    </div>
 </body>
 </html>
