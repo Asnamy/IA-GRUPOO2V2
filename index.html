@@ -1241,15 +1241,27 @@
     <!-- Modal para la Visualización D3.js -->
     <div id="viz-modal-overlay" class="fixed inset-0 bg-black bg-opacity-75 z-[100] flex items-center justify-center p-4 hidden">
         <div id="viz-modal-content" class="relative bg-[#2d3748] rounded-xl shadow-lg w-full h-full max-w-[95vw] max-h-[95vh] flex flex-col p-4">
-            <button id="close-viz-btn" class="absolute top-2 right-2 bg-white/20 text-white rounded-full w-8 h-8 text-xl hover:bg-white/40 z-10">×</button>
-            <div class="chart-container flex-grow">
-                <svg id="network-chart"></svg>
+            <button id="close-viz-btn" class="absolute top-2 right-2 bg-white/20 text-white rounded-full w-8 h-8 text-xl hover:bg-white/40 z-20">×</button>
+            <div class="chart-container flex-grow h-full w-full">
+                <svg id="network-chart" class="w-full h-full"></svg>
             </div>
             <div class="legend text-xs text-gray-400 p-2 border-t border-gray-600">
-                <ul id="legend-list" class="flex flex-wrap justify-center gap-x-3 gap-y-1">
-                    <!-- La leyenda se llenará con JS -->
-                </ul>
+                <ul id="legend-list" class="flex flex-wrap justify-center gap-x-3 gap-y-1"></ul>
             </div>
+        </div>
+    </div>
+    
+    <!-- Tooltip para la Visualización -->
+    <div id="viz-tooltip" class="tooltip"></div>
+    
+    <!-- Modal de DETALLE para los Nodos de la Visualización -->
+    <div id="viz-node-detail-modal" class="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-[2000] p-4 hidden">
+        <div class="bg-[#2d3748] p-8 rounded-xl max-w-lg w-full shadow-lg relative">
+            <div class="flex justify-between items-center mb-4 pb-2 border-b border-gray-600">
+                <h2 id="viz-node-title" class="text-2xl font-bold text-gray-300"></h2>
+                <button id="viz-close-detail-btn" class="text-3xl text-gray-400 hover:text-white">×</button>
+            </div>
+            <div id="viz-node-body" class="text-base leading-relaxed text-gray-200"></div>
         </div>
     </div>
 </body>
