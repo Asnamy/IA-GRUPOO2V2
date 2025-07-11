@@ -43,6 +43,7 @@
                         <li><a href="#recursos" class="nav-link block p-3 rounded hover:bg-corporate-blue transition-colors"><i class="fas fa-newspaper mr-3"></i>Recursos</a></li>
                         <li><a href="#equipo" class="nav-link block p-3 rounded hover:bg-corporate-blue transition-colors"><i class="fas fa-users mr-3"></i>Equipo</a></li>
                         <li><a href="#proximos-pasos" class="nav-link block p-3 rounded hover:bg-corporate-blue transition-colors"><i class="fas fa-road mr-3"></i>Próximos Pasos</a></li>
+                        <li><a href="#visualizacion" class="nav-link block p-3 rounded hover:bg-corporate-blue transition-colors"><i class="fas fa-project-diagram mr-3"></i>Visualización</a></li>
                     </ul>
                 </nav>
             </div>
@@ -969,6 +970,21 @@
                 </div>
             </div>
         </section>
+
+        <!-- Section 11: VISUALIZACIÓN INTERACTIVA -->
+        <section id="visualizacion" class="section-content min-h-screen p-6 md:p-12 bg-white flex items-center justify-center">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="bg-gradient-to-r from-corporate-blue to-corporate-light text-white rounded-lg p-12 shadow-2xl">
+                    <h2 class="text-4xl font-bold mb-4">Resumen Interactivo</h2>
+                    <p class="text-xl mb-8 opacity-90">
+                        Explora un mapa conceptual de toda la guía. Arrastra los nodos, haz zoom y haz clic para descubrir las conexiones entre cada tema que hemos visto.
+                    </p>
+                    <button id="open-viz-btn" class="bg-white text-corporate-blue px-10 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-transform hover:scale-105 shadow-lg">
+                        <i class="fas fa-project-diagram mr-3"></i>Abrir Visualización
+                    </button>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Modals for IA en Acción examples -->
@@ -1221,5 +1237,20 @@
     </div>
 
     <script src="js/main.js"></script>
+    
+    <!-- Modal para la Visualización D3.js -->
+    <div id="viz-modal-overlay" class="fixed inset-0 bg-black bg-opacity-75 z-[100] flex items-center justify-center p-4 hidden">
+        <div id="viz-modal-content" class="relative bg-[#2d3748] rounded-xl shadow-lg w-full h-full max-w-[95vw] max-h-[95vh] flex flex-col p-4">
+            <button id="close-viz-btn" class="absolute top-2 right-2 bg-white/20 text-white rounded-full w-8 h-8 text-xl hover:bg-white/40 z-10">×</button>
+            <div class="chart-container flex-grow">
+                <svg id="network-chart"></svg>
+            </div>
+            <div class="legend text-xs text-gray-400 p-2 border-t border-gray-600">
+                <ul id="legend-list" class="flex flex-wrap justify-center gap-x-3 gap-y-1">
+                    <!-- La leyenda se llenará con JS -->
+                </ul>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
